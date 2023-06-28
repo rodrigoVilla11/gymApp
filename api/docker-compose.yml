@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  gym_app_api:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DB_CONNECTION=mongodb://gymApp:43132542@db_gym_app:27017/db_gym_app?authSource=admin
+    links:
+      - db_gym_app
+  db_gym_app:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=gymApp
+      - MONGO_INITDB_ROOT_PASSWORD=43132542
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
