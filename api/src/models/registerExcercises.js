@@ -18,4 +18,4 @@ const RegisterExcercisesSchema = new Schema({
   series: Number,
   repetitions: Number,)
 
-module.exports = model("Excercises", RegisterExcercisesSchema )
+module.exports = model("RegisterExercises", RegisterExcercisesSchema )
