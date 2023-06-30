@@ -24,4 +24,17 @@ mainRouter.get("/exercises", getAllExercises)
 mainRouter.get("/exercises/:id", getExerciseById)
 mainRouter.delete("/exercises/:id", deleteExerciseById)
 mainRouter.put("/exercises/:id", updateExercise)
+
+//REGISTER EXERCISES
+const postRegisterExercise = require("../controllers/registerExercises/Post_RegisterExercise.js")
+const getRegisterExerciseById = require("../controllers/registerExercises/Get_RegisterExercisesByUserId.js")
+const deleteRegisterExercise = require("../controllers/registerExercises/Delete_RegisterExercise.js")
+mainRouter.post("/myExercises", postRegisterExercise)
+mainRouter.get("/myExercises/:userId", getRegisterExerciseById)
+mainRouter.delete("/myExercises/:registerExercisesId", deleteRegisterExercise)
+
+
+
 module.exports = mainRouter;
+
+

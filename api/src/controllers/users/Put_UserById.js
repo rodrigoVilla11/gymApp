@@ -14,7 +14,7 @@ const userUpdate = async (req, res) => {
       password: password,
       email: email
     })
-    res.status(200).json({message: "User updated", userUpdated: userUpdated})
+    res.status(200).json({message: "User updated successfully", userUpdated: userUpdated})
   } catch (error) {
     res.status(404).json({error: error.message})
   }

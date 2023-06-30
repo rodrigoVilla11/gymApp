@@ -12,7 +12,7 @@ const updateExercise = async (req, res) => {
       description: description,
       musclesInvolved: musclesInvolved
     })
-    res.status(200).json({message: "Exercise updated successfuly"})
+    res.status(200).json({message: "Exercise updated successfully"})
   } catch (error) {
     res.status(400).json({error: error.message})
   }

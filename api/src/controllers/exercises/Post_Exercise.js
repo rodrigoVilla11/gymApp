@@ -11,7 +11,7 @@ const postExercise = async (req, res) => {
       description,
       musclesInvolved
     })
-    res.status(200).json({message: "Exercise created successfuly", newExercise: newExercise})
+    res.status(200).json({message: "Exercise created successfully", newExercise: newExercise})
   } catch (error) {
     res.status(400).json({error: error.message})
   }

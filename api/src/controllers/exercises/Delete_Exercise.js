@@ -7,7 +7,7 @@ const deleteExercise = async (req, res) => {
       throw Error("Missing DATA")
     }
     const exercise = await Exercise.findByIdAndDelete(id)
-    res.status(200).json({message: "Exercise deleted successfuly", deletedExercise: exercise})
+    res.status(200).json({message: "Exercise deleted successfully", deletedExercise: exercise})
   } catch (error) {
     res.status(400).json({error: error.message})
   }

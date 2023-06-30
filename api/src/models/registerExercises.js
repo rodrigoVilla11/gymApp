@@ -2,20 +2,23 @@ const {Schema, model} = require("mongoose")
 
 const RegisterExcercisesSchema = new Schema({
   user: { 
-    type: mongoose.Schema.Types.ObjectId, 
+    type: Schema.Types.ObjectId, 
     ref: 'User',
     required: true 
   },
-  exercise: { 
-    type: mongoose.Schema.Types.ObjectId, 
+  exercise: [{ 
+    type: Schema.Types.ObjectId, 
     ref: 'Exercises', 
     required: true 
-  },
+  }],
   date: { 
     type: Date, 
     default: Date.now },
+  day: String,
   weight: Number,
   series: Number,
-  repetitions: Number,)
+  repetitions: Number,
+  rest: String
+})
 
 module.exports = model("RegisterExercises", RegisterExcercisesSchema )
